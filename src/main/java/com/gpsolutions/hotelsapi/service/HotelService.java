@@ -161,7 +161,9 @@ public class HotelService {
                 .address(modelMapper.map(hotel.getAddress(), AddressDto.class))
                 .contacts(modelMapper.map(hotel.getContacts(), ContactsDto.class))
                 .arrivalTime(modelMapper.map(hotel.getArrivalTime(), ArrivalTimeDto.class))
-                .amenities(hotel.getAmenities().stream().map(Amenity::getName).collect(Collectors.toSet()))
+                .amenities(hotel.getAmenities().stream()
+                        .map(Amenity::getName)
+                        .collect(Collectors.toSet()))
                 .build();
     }
 
